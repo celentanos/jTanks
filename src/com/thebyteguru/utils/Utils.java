@@ -34,7 +34,8 @@ public class Utils {
             List<Integer[]> lvlLines = new ArrayList<Integer[]>();
 
             while ((line = reader.readLine()) != null) {
-                if (line.charAt(0) != ' ' && line.charAt(0) != '<') {
+                if (!line.contains("<")) {
+                    line = line.replace(" ", "");
                     lvlLines.add(str2int_arrays(line.split(",")));
                 } else {
                     continue;
